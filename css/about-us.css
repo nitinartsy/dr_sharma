@@ -642,4 +642,465 @@ img.wp-smiley,
 
         .trx_demo_tabs_style_icons [class*="hint_"]:after {
             background-color: var(--theme-color-alt_bg_color);
-        }
+        }@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary-color: #0d2b45; /* Deep Navy Blue */
+  --secondary-color: #20a4f3; /* Bright, trustworthy blue */
+  --accent-color: #ff3366; /* Vibrant modern contrast */
+  --bg-light: #f8fbff;
+  --bg-dark: #07131f;
+  --text-main: #2b3a4a;
+  --text-muted: #6b7a8c;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Base Adjustments */
+body,
+.body_wrap,
+p,
+span,
+div {
+  font-family: var(--font-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.elementor-heading-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 15px rgba(32, 164, 243, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(32, 164, 243, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(32, 164, 243, 0.2);
+  }
+}
+
+/* Enhance Hero Section & Top Panel */
+.top_panel {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.sc_layouts_logo_default .logo_image {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sc_layouts_logo_default:hover .logo_image {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Global Buttons Styling */
+.elementor-button {
+  border-radius: 50px !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  ) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 10px 20px -5px rgba(32, 164, 243, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.elementor-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.elementor-button:hover::before {
+  opacity: 1;
+}
+
+.elementor-button:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 15px 25px -5px rgba(32, 164, 243, 0.6) !important;
+  animation: glowEffect 2s infinite;
+}
+
+/* Interactive Cards & Images */
+.elementor-widget-image img {
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.elementor-widget-image:hover img {
+  transform: scale(1.03) translateY(-5px) !important;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Services Sections Micro-interactions */
+.elementor-column-wrap {
+  transition: all 0.4s ease;
+}
+.elementor-column:hover .elementor-column-wrap {
+  transform: translateY(-5px);
+}
+
+/* Odometer/Counters Premium Look */
+.odometer-value {
+  background: -webkit-linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Footer Upgrades */
+.footer_wrap {
+  background: var(--bg-dark) !important;
+  color: #f0f4f8 !important;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer_wrap::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(32, 164, 243, 0.08) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.elementor-icon-list-text,
+.trx-addons-advanced-title-item-text {
+  color: #a0aec0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.elementor-icon-list-item a:hover .elementor-icon-list-text,
+.trx-addons-advanced-title-item:hover {
+  color: var(--secondary-color) !important;
+  transform: translateX(6px);
+  display: inline-block;
+}
+
+/* Nav Menu Hover Animation */
+.trx-addons-menu-link {
+  position: relative;
+}
+.trx-addons-menu-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.trx-addons-menu-link:hover::after {
+  width: 100%;
+}
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary-color: #0d2b45; /* Deep Navy Blue */
+  --secondary-color: #20a4f3; /* Bright, trustworthy blue */
+  --accent-color: #ff3366; /* Vibrant modern contrast */
+  --bg-light: #f8fbff;
+  --bg-dark: #07131f;
+  --text-main: #2b3a4a;
+  --text-muted: #6b7a8c;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Base Adjustments */
+body,
+.body_wrap,
+p,
+span,
+div {
+  font-family: var(--font-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.elementor-heading-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 15px rgba(32, 164, 243, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(32, 164, 243, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(32, 164, 243, 0.2);
+  }
+}
+
+/* Enhance Hero Section & Top Panel */
+.top_panel {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.sc_layouts_logo_default .logo_image {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sc_layouts_logo_default:hover .logo_image {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Global Buttons Styling */
+.elementor-button {
+  border-radius: 50px !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  ) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 10px 20px -5px rgba(32, 164, 243, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.elementor-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.elementor-button:hover::before {
+  opacity: 1;
+}
+
+.elementor-button:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 15px 25px -5px rgba(32, 164, 243, 0.6) !important;
+  animation: glowEffect 2s infinite;
+}
+
+/* Interactive Cards & Images */
+.elementor-widget-image img {
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.elementor-widget-image:hover img {
+  transform: scale(1.03) translateY(-5px) !important;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Services Sections Micro-interactions */
+.elementor-column-wrap {
+  transition: all 0.4s ease;
+}
+.elementor-column:hover .elementor-column-wrap {
+  transform: translateY(-5px);
+}
+
+/* Odometer/Counters Premium Look */
+.odometer-value {
+  background: -webkit-linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Footer Upgrades */
+.footer_wrap {
+  background: var(--bg-dark) !important;
+  color: #f0f4f8 !important;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer_wrap::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(32, 164, 243, 0.08) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.elementor-icon-list-text,
+.trx-addons-advanced-title-item-text {
+  color: #a0aec0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.elementor-icon-list-item a:hover .elementor-icon-list-text,
+.trx-addons-advanced-title-item:hover {
+  color: var(--secondary-color) !important;
+  transform: translateX(6px);
+  display: inline-block;
+}
+
+/* Nav Menu Hover Animation */
+.trx-addons-menu-link {
+  position: relative;
+}
+.trx-addons-menu-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.trx-addons-menu-link:hover::after {
+  width: 100%;
+}

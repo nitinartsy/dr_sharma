@@ -472,6 +472,18 @@
       type="text/css"
       media="(max-width:1679px)"
     />
+
+    <style>
+      /* Standardized Sticky Header css */
+      header.top_panel,
+      .sc_layouts_row_fixed_always {
+        position: sticky !important;
+        top: 0 !important;
+        height: 0px;
+        z-index: 100000 !important;
+        background-color: #ffffff00 !important; /* Ensure background is solid so it does not overlap transparently */
+      }
+    </style>
   </head>
 
   <body
@@ -530,9 +542,7 @@
                         ><img
                           class="logo_image"
                           src="images/About/Logo-removebg.png"
-                          srcset="
-                            images/About/Logo-removebg.png 2x
-                          "
+                          srcset="images/About/Logo-removebg.png 2x"
                           alt="MD"
                           width="66"
                           height="36"
@@ -869,9 +879,7 @@
                         ><img
                           class="logo_image"
                           src="images/About/Logo-removebg.png"
-                          srcset="
-                            images/About/Logo-removebg.png 2x
-                          "
+                          srcset="images/About/Logo-removebg.png 2x"
                           alt="MD"
                           width="66"
                           height="36"

@@ -446,7 +446,19 @@
       type="text/css"
       media="(max-width:1679px)"
     />
-  </head>
+  
+<style>
+  /* Standardized Sticky Header css */
+  header.top_panel, .sc_layouts_row_fixed_always {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100000 !important;
+    background-color: #ffffff00 !important; /* Ensure background is solid so it does not overlap transparently */
+  }
+</style>
+
+<link property="stylesheet" rel="stylesheet" id="elementor-post-76-css" href="https://md.axiomthemes.com/wp-content/uploads/elementor/css/post-76.css?ver=1770172757" type="text/css" media="all" />
+</head>
 
   <body
     class="wp-singular page-template-default page page-id-43 wp-custom-logo wp-embed-responsive wp-theme-md trx_addons_customizable_theme skin_default elementor-use-container scheme_default blog_mode_page body_style_fullscreen is_single sidebar_hide expand_content remove_margins trx_addons_present header_type_custom header_style_header-custom-20 header_position_default menu_side_ no_layout fixed_blocks_sticky elementor-default elementor-kit-1 elementor-page elementor-page-43"
@@ -6472,6 +6484,7 @@
             data-elementor-type="cpt_layouts"
             data-elementor-id="103"
             class="elementor elementor-103"
+                   style="background: none; height: 0px;"
           >
             <div
               class="e-con-gap-no elementor-element elementor-element-05a8f6b e-flex e-con-boxed sc_layouts_column_icons_position_left e-con e-parent"
