@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Mail Form</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    (function(){
+      emailjs.init("_YrR57SXro04q39NZ");
+    })();
+
+    function sendMail(e) {
+      e.preventDefault();
+
+      let params = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      };
+
+      emailjs.send("service_qpkpz23", "template_f66r84v", params)
+      .then(function(res){
+        alert("Mail Sent Successfully ✅");
+        document.getElementById("form").reset();
+      })
+      .catch(function(err){
+        alert("Error ❌ " + JSON.stringify(err));
+      });
+    }
+  </script>
+
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Contact Form</h2>
+
+    <form id="form" onsubmit="sendMail(event)">
+      <input type="text" id="name" placeholder="Enter Name" required>
+      <input type="number" id="age" placeholder="Enter Age" required>
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <textarea id="message" placeholder="Message"></textarea>
+
+      <button type="submit">Send Mail</button>
+    </form>
+  </div>
+
+</body>
+</html>
