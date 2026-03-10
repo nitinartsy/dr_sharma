@@ -4,6 +4,38 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── 0. MEGA MENU HOVER ───────────────────────────────── */
+  document.querySelectorAll('.has-mega-menu').forEach(li => {
+    const menu = li.querySelector('.mega-menu');
+    if (!menu) return;
+
+    let leaveTimer;
+
+    li.addEventListener('mouseenter', () => {
+      clearTimeout(leaveTimer);
+      menu.style.opacity = '1';
+      menu.style.visibility = 'visible';
+      menu.style.transform = 'translateY(0)';
+    });
+
+    li.addEventListener('mouseleave', () => {
+      leaveTimer = setTimeout(() => {
+        menu.style.opacity = '0';
+        menu.style.visibility = 'hidden';
+        menu.style.transform = 'translateY(-6px)';
+      }, 150);
+    });
+
+    menu.addEventListener('mouseenter', () => clearTimeout(leaveTimer));
+    menu.addEventListener('mouseleave', () => {
+      leaveTimer = setTimeout(() => {
+        menu.style.opacity = '0';
+        menu.style.visibility = 'hidden';
+        menu.style.transform = 'translateY(-6px)';
+      }, 150);
+    });
+  });
+
   /* ── 1. MOBILE HAMBURGER MENU ─────────────────────────── */
   const toggle = document.querySelector('.mobile-menu-toggle');
   const nav = document.querySelector('.main-nav');
