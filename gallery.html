@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-</head>
+  </head>
   <body>
     <!-- Header -->
     <header class="site-header">
@@ -33,21 +33,33 @@
         <nav class="main-nav">
           <ul class="nav-list flex items-center gap-2">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us &#9662;</a>
+            <li>
+              <a href="about-us.html">About Us &#9662;</a>
               <ul class="nav-dropdown">
                 <li><a href="about-us.html#introduction">Introduction</a></li>
-                <li><a href="about-us.html#know-your-doctor">Know your doctor</a></li>
+                <li>
+                  <a href="about-us.html#know-your-doctor">Know your doctor</a>
+                </li>
                 <li><a href="about-us.html#memberships">Memberships</a></li>
                 <li><a href="about-us.html#awards">Awards</a></li>
-              </ul></li>
-            <li><a href="services.html">Services &#9662;</a>
+              </ul>
+            </li>
+            <li>
+              <a href="services.html">Services &#9662;</a>
               <ul class="nav-dropdown">
-                <li><a href="service-prostate-cancer.html">Prostate Cancer</a></li>
+                <li>
+                  <a href="service-prostate-cancer.html">Prostate Cancer</a>
+                </li>
                 <li><a href="service-kidney-cancer.html">Kidney Cancer</a></li>
-                <li><a href="service-bladder-cancer.html">Bladder Cancer</a></li>
-                <li><a href="service-testicular-cancer.html">Testicular Cancer</a></li>
+                <li>
+                  <a href="service-bladder-cancer.html">Bladder Cancer</a>
+                </li>
+                <li>
+                  <a href="service-testicular-cancer.html">Testicular Cancer</a>
+                </li>
                 <li><a href="service-penile-cancer.html">Penile Cancer</a></li>
-              </ul></li>
+              </ul>
+            </li>
             <li><a href="gallery.html" class="active">Gallery</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contactus.html">Contact Us</a></li>
@@ -94,26 +106,38 @@
 
     <!-- Main Content -->
     <main>
-      <!-- Gallery Section -->
-      <section
-        class="gallery-section section-padding bg-light"
-        style="min-height: calc(100vh - 300px)"
-      >
+      <!-- Page Header & Filters -->
+      <section class="section-padding bg-light" style="padding-bottom: 2rem">
         <div class="container">
-          <div class="section-heading text-center mb-3">
+          <div class="section-heading text-center mb-2">
             <h1
               class="page-title"
               style="font-size: 3.5rem; color: var(--primary-color)"
             >
               Patient Gallery
             </h1>
-            <p class="text-muted mt-1" style="font-size: 1.2rem">
+            <p class="text-muted mt-1 mb-2" style="font-size: 1.2rem">
               Moments of care, robotic surgery, and patient recovery at Manipal
               Hospital, Dwarka.
             </p>
-          </div>
 
-          <div class="custom-gallery-grid">
+            <div class="gallery-filters flex justify-center gap-1 mt-2">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="photos">Photos</button>
+              <button class="filter-btn" data-filter="videos">Videos</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section (Photos) -->
+      <section
+        class="gallery-section pb-section bg-light filter-section"
+        id="photos-section"
+        data-category="photos"
+      >
+        <div class="container">
+          <div class="photo-gallery-grid">
             <div class="gallery-item">
               <img
                 src="images/Gallery/gallery_1.jpeg"
@@ -183,6 +207,282 @@
                 alt="Recovery ward"
                 loading="lazy"
               />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_11.jpeg"
+                alt="Gallery Image 11"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_12.jpeg"
+                alt="Gallery Image 12"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_13.jpeg"
+                alt="Gallery Image 13"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_14.jpeg"
+                alt="Gallery Image 14"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_15.jpeg"
+                alt="Gallery Image 15"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_16.jpeg"
+                alt="Gallery Image 16"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_17.jpeg"
+                alt="Gallery Image 17"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_18.jpeg"
+                alt="Gallery Image 18"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_19.jpeg"
+                alt="Gallery Image 19"
+                loading="lazy"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/Gallery/gallery_20.jpeg"
+                alt="Gallery Image 20"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Standard Videos Section -->
+      <section
+        class="gallery-section section-padding bg-white filter-section"
+        id="videos"
+        data-category="videos"
+      >
+        <div class="container">
+          <div class="section-heading text-center mb-3">
+            <h2
+              class="section-title"
+              style="font-size: 3.5rem; color: var(--primary-color)"
+            >
+              Video Library
+            </h2>
+            <p class="text-muted mt-1" style="font-size: 1.2rem">
+              In-depth educational videos and media appearances.
+            </p>
+          </div>
+          <div class="custom-gallery-grid">
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ZLxNoFiOd-c"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/vA5fe7Sl4vY"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/uWEnmdoPg0Q"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/jXyYimJOYy4"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ky7G9V2gSsk"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/PDnddUZhBJI"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ezzyDDPL1bs"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 16/9">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ZMHvHcbgUqg"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 1/1">
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAgewithgraceBPH%2Fvideos%2Fdr-gopal-sharma-consult-for-urological-problems%2F307907878611219%2F&show_text=false&width=560"
+                width="100%"
+                height="100%"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  picture-in-picture;
+                  web-share;
+                "
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shorts Section -->
+      <section
+        class="gallery-section pb-section bg-white filter-section"
+        id="shorts"
+        data-category="videos"
+      >
+        <div class="container">
+          <div class="section-heading text-center mb-3">
+            <h2
+              class="section-title"
+              style="font-size: 2.5rem; color: var(--primary-color)"
+            >
+              Shorts & Quick Tips
+            </h2>
+          </div>
+          <div
+            class="shorts-grid"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+              gap: 20px;
+            "
+          >
+            <div class="gallery-item video-item" style="aspect-ratio: 9/16">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ea7toI5Wa74"
+                title="YouTube shorts player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 9/16">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/PN4sf5eQkxE"
+                title="YouTube shorts player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 9/16">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/9-VWYjkVk-g"
+                title="YouTube shorts player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 9/16">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/RIZVor-kea4"
+                title="YouTube shorts player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="gallery-item video-item" style="aspect-ratio: 9/16">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/rglAiLPf1gc"
+                title="YouTube shorts player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
         </div>

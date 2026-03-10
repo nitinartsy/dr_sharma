@@ -164,4 +164,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── 7. GALLERY FILTERING ──────────────────────────── */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterSections = document.querySelectorAll('.filter-section');
+
+  if (filterBtns.length > 0 && filterSections.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        filterSections.forEach(section => {
+          if (filterValue === 'all' || section.getAttribute('data-category') === filterValue) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
 });
