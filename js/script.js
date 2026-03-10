@@ -6,32 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── 1. MOBILE HAMBURGER MENU ─────────────────────────── */
   const toggle = document.querySelector('.mobile-menu-toggle');
-  const nav    = document.querySelector('.main-nav');
+  const nav = document.querySelector('.main-nav');
 
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('active');
-      toggle.innerHTML  = isOpen ? '&times;' : '&#9776;';
+      toggle.innerHTML = isOpen ? '&times;' : '&#9776;';
       toggle.setAttribute('aria-expanded', isOpen);
       // Prevent body scroll when menu is open
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close menu on nav link click
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        toggle.innerHTML = '&#9776;';
-        toggle.setAttribute('aria-expanded', false);
-        document.body.style.overflow = '';
+    // Handle nested dropdown toggles on mobile
+    const dropdownToggles = nav.querySelectorAll('li > a');
+    dropdownToggles.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // If this link has a dropdown next to it
+        const dropdown = link.nextElementSibling;
+        if (dropdown && dropdown.classList.contains('nav-dropdown') && window.innerWidth <= 768) {
+          e.preventDefault(); // Prevent navigating right away
+          // close others
+          nav.querySelectorAll('.nav-dropdown').forEach(d => {
+            if (d !== dropdown) {
+              d.style.display = 'none';
+            }
+          });
+          // toggle this
+          const isVisible = dropdown.style.display === 'block';
+          dropdown.style.display = isVisible ? 'none' : 'block';
+        } else {
+          // Normal link click, close menu
+          if (window.innerWidth <= 768) {
+            nav.classList.remove('active');
+            toggle.innerHTML = '&#9776;';
+            toggle.setAttribute('aria-expanded', false);
+            document.body.style.overflow = '';
+          }
+        }
       });
     });
 
     // Close menu on outside click
     document.addEventListener('click', (e) => {
       if (nav.classList.contains('active') &&
-          !nav.contains(e.target) &&
-          !toggle.contains(e.target)) {
+        !nav.contains(e.target) &&
+        !toggle.contains(e.target)) {
         nav.classList.remove('active');
         toggle.innerHTML = '&#9776;';
         document.body.style.overflow = '';
@@ -125,6 +144,24 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       a.classList.remove('active');
     }
+  });
+
+  /* ── 6. ACCORDION TOGGLE ─────────────────────────────── */
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isActive = item.classList.contains('active');
+
+      // Optional: Close other open accordions
+      // document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active'));
+
+      if (!isActive) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
   });
 
 });

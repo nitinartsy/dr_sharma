@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-</head>
+  </head>
   <body>
     <!-- Header -->
     <header class="site-header">
@@ -36,8 +36,33 @@
         <nav class="main-nav">
           <ul class="nav-list flex items-center gap-2">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li>
+              <a href="about-us.html">About Us &#9662;</a>
+              <ul class="nav-dropdown">
+                <li><a href="about-us.html#introduction">Introduction</a></li>
+                <li>
+                  <a href="about-us.html#know-your-doctor">Know your doctor</a>
+                </li>
+                <li><a href="about-us.html#memberships">Memberships</a></li>
+                <li><a href="about-us.html#awards">Awards</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="services.html">Services &#9662;</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="service-prostate-cancer.html">Prostate Cancer</a>
+                </li>
+                <li><a href="service-kidney-cancer.html">Kidney Cancer</a></li>
+                <li>
+                  <a href="service-bladder-cancer.html">Bladder Cancer</a>
+                </li>
+                <li>
+                  <a href="service-testicular-cancer.html">Testicular Cancer</a>
+                </li>
+                <li><a href="service-penile-cancer.html">Penile Cancer</a></li>
+              </ul>
+            </li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contactus.html" class="active">Contact Us</a></li>
@@ -245,6 +270,128 @@
                 Send Message
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="section-padding container mb-4">
+        <div
+          class="flex gap-3 justify-between items-center bg-white p-4"
+          style="
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eaeaea;
+          "
+        >
+          <div class="stats-image" style="flex: 1">
+            <img
+              src="images/Gallery/gallery_4.jpeg"
+              alt="Dr. Gopal Sharma performing robotic surgery"
+              style="
+                border-radius: 24px;
+                min-height: 400px;
+                object-fit: cover;
+                width: 100%;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+              "
+            />
+          </div>
+
+          <div class="stats-content" style="flex: 1; padding: 2rem">
+            <span
+              class="subtitle"
+              style="
+                font-size: 0.85rem;
+                letter-spacing: 1.5px;
+                color: var(--secondary-color);
+                font-weight: 600;
+              "
+            >
+              URO-ONCOLOGY SURGICAL EXPERTISE
+            </span>
+            <h2
+              style="
+                font-size: 2.5rem;
+                margin-top: 10px;
+                margin-bottom: 3rem;
+                color: var(--primary-color);
+              "
+            >
+              Advanced robotic<br />surgery outcomes
+            </h2>
+
+            <div class="stat-block flex items-center gap-2 mb-3">
+              <div
+                class="stat-num"
+                style="
+                  font-size: 3rem;
+                  font-weight: 700;
+                  color: var(--secondary-color);
+                  line-height: 1;
+                "
+              >
+                8+
+              </div>
+              <div
+                class="stat-label"
+                style="
+                  font-size: 1.1rem;
+                  color: var(--text-muted);
+                  font-weight: 500;
+                "
+              >
+                Years of experience<br />in robotic surgery
+              </div>
+            </div>
+
+            <div class="stat-block flex items-center gap-2 mb-3">
+              <div
+                class="stat-num"
+                style="
+                  font-size: 3rem;
+                  font-weight: 700;
+                  color: var(--secondary-color);
+                  line-height: 1;
+                "
+              >
+                500+
+              </div>
+              <div
+                class="stat-label"
+                style="
+                  font-size: 1.1rem;
+                  color: var(--text-muted);
+                  font-weight: 500;
+                "
+              >
+                Robotic urological<br />surgeries performed
+              </div>
+            </div>
+
+            <div class="stat-block flex items-center gap-2">
+              <div
+                class="stat-num"
+                style="
+                  font-size: 3rem;
+                  font-weight: 700;
+                  color: var(--secondary-color);
+                  line-height: 1;
+                "
+              >
+                5
+              </div>
+              <div
+                class="stat-label"
+                style="
+                  font-size: 1.1rem;
+                  color: var(--text-muted);
+                  font-weight: 500;
+                "
+              >
+                Major cancer types<br />successfully treated
+              </div>
+            </div>
           </div>
         </div>
       </section>
