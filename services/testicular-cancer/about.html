@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About – Testicular Cancer – Dr. Gopal Sharma</title>
-<meta content="Comprehensive urological care using the most advanced robotic and minimally invasive techniques." name="description"/>
+<meta name="description" content="About – Testicular Cancer - Comprehensive urological care by Dr. Gopal Sharma."/>
 <link href="../../css/style.css" rel="stylesheet"/>
 <link href="../../css/responsive.css" rel="stylesheet"/>
+<style>
+  .iframe-container {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+  .iframe-container iframe {
+    width: 100%;
+    border: none;
+    min-height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  }
+  .iframe-container h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+</style>
 </head>
 <body>
 <!-- Header -->
@@ -18,84 +35,121 @@
 <img alt="Dr. Gopal Sharma" height="36" src="../../images/About/Logo-removebg.png" width="66"/>
 </a>
 </div>
-<button aria-label="Toggle navigation" class="mobile-menu-toggle">
-          ☰
-        </button>
+<button aria-label="Toggle navigation" class="mobile-menu-toggle">&#9776;</button>
 <nav class="main-nav">
 <ul class="nav-list flex items-center gap-2">
 <li><a href="../../index.html">Home</a></li>
-<li><a href="../../about-us.html">About Us ▾</a>
+<li><a href="../../about-us.html">About Us &#9662;</a>
 <ul class="nav-dropdown">
 <li><a href="../../about-us.html#introduction">Introduction</a></li>
 <li><a href="../../about-us.html#know-your-doctor">Know your doctor</a></li>
 <li><a href="../../about-us.html#memberships">Memberships</a></li>
 <li><a href="../../about-us.html#awards">Awards</a></li>
 </ul></li>
-<li class="has-mega-menu">
-<a class="active" href="../../services.html">Services ▾</a>
-<div class="mega-menu">
-<div class="mega-menu-content flex justify-between gap-2 container">
-<div class="mega-menu-col">
-<h4><a href="../../service-prostate-cancer.html">Prostate Cancer</a></h4>
-<ul>
-<li><a href="../../services/prostate-cancer/about.html">About</a></li>
-<li><a href="../../services/prostate-cancer/pis.html">PIS</a></li>
-<li><a href="../../services/prostate-cancer/faqs.html">FAQs</a></li>
+<li class="has-nested-dropdown">
+<a href="../../services.html">Services &#9662;</a>
+<ul class="services-dropdown">
+<li>
+  <a href="../../services/prostate-cancer/about.html">Prostate Cancer <span class="arrow">&#9656;</span></a>
+  <ul class="services-submenu">
+    <li><a href="../../services/prostate-cancer/about.html">About</a></li>
+    <li><a href="../../services/prostate-cancer/pis/">PIS <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/prostate-cancer/pis/rarp-pis.html">RARP</a></li>
+        <li><a href="../../services/prostate-cancer/pis/trus-pis.html">TRUS</a></li>
+      </ul></li>
+    <li><a href="../../services/prostate-cancer/faqs/">FAQs <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/prostate-cancer/faqs/rarp-faqs.html">RARP</a></li>
+        <li><a href="../../services/prostate-cancer/faqs/trus-faqs.html">TRUS</a></li>
+      </ul></li>
+  </ul>
+</li>
+<li>
+  <a href="../../services/bladder-cancer/about.html">Bladder Cancer <span class="arrow">&#9656;</span></a>
+  <ul class="services-submenu">
+    <li><a href="../../services/bladder-cancer/about.html">About</a></li>
+    <li><a href="../../services/bladder-cancer/pis/">PIS <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/bladder-cancer/pis/rarc-pis.html">RARC</a></li>
+        <li><a href="../../services/bladder-cancer/pis/turbt-pis.html">TURBT</a></li>
+      </ul></li>
+    <li><a href="../../services/bladder-cancer/faqs/">FAQs <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/bladder-cancer/faqs/cystoscopy-faqs.html">Cystoscopy</a></li>
+        <li><a href="../../services/bladder-cancer/faqs/intravesical-treatment-faqs.html">Intravesical Treatment</a></li>
+        <li><a href="../../services/bladder-cancer/faqs/rarc-faqs.html">RARC</a></li>
+        <li><a href="../../services/bladder-cancer/faqs/turbt-faqs.html">TURBT</a></li>
+      </ul></li>
+  </ul>
+</li>
+<li>
+  <a href="../../services/kidney-cancer/about.html">Kidney Cancer <span class="arrow">&#9656;</span></a>
+  <ul class="services-submenu">
+    <li><a href="../../services/kidney-cancer/about.html">About</a></li>
+    <li><a href="../../services/kidney-cancer/pis/">PIS <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/kidney-cancer/pis/rapn-pis.html">RAPN</a></li>
+        <li><a href="../../services/kidney-cancer/pis/rn-pis.html">RN</a></li>
+      </ul></li>
+    <li><a href="../../services/kidney-cancer/faqs/">FAQs <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/kidney-cancer/faqs/rapn-faqs.html">RAPN</a></li>
+        <li><a href="../../services/kidney-cancer/faqs/rrn-faqs.html">RRN</a></li>
+      </ul></li>
+  </ul>
+</li>
+<li>
+  <a href="../../services/testicular-cancer/about.html">Testicular Cancer <span class="arrow">&#9656;</span></a>
+  <ul class="services-submenu">
+    <li><a href="../../services/testicular-cancer/about.html">About</a></li>
+    <li><a href="../../services/testicular-cancer/pis/">PIS <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/testicular-cancer/pis/hio.html">HIO</a></li>
+        <li><a href="../../services/testicular-cancer/pis/rplnd-pis.html">RPLND</a></li>
+      </ul></li>
+    <li><a href="../../services/testicular-cancer/faqs/">FAQs <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/testicular-cancer/faqs/hio-faq.html">HIO</a></li>
+        <li><a href="../../services/testicular-cancer/faqs/rplnd-faqs.html">RPLND</a></li>
+      </ul></li>
+  </ul>
+</li>
+<li>
+  <a href="../../services/penile-cancer/about.html">Penile Cancer <span class="arrow">&#9656;</span></a>
+  <ul class="services-submenu">
+    <li><a href="../../services/penile-cancer/about.html">About</a></li>
+    <li><a href="../../services/penile-cancer/pis/">PIS <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/penile-cancer/pis/partial-penectomy.html">Partial Penectomy</a></li>
+        <li><a href="../../services/penile-cancer/pis/r-veil.html">R VEIL</a></li>
+      </ul></li>
+    <li><a href="../../services/penile-cancer/faqs/">FAQs <span class="arrow">&#9656;</span></a>
+      <ul class="services-submenu">
+        <li><a href="../../services/penile-cancer/faqs/pp-faq.html">Partial Penectomy</a></li>
+        <li><a href="../../services/penile-cancer/faqs/veil-faqs.html">VEIL</a></li>
+      </ul></li>
+  </ul>
+</li>
 </ul>
-</div>
-<div class="mega-menu-col">
-<h4><a href="../../service-bladder-cancer.html">Bladder Cancer</a></h4>
-<ul>
-<li><a href="../../services/bladder-cancer/about.html">About</a></li>
-<li><a href="../../services/bladder-cancer/pis.html">PIS</a></li>
-<li><a href="../../services/bladder-cancer/faqs.html">FAQs</a></li>
-</ul>
-</div>
-<div class="mega-menu-col">
-<h4><a href="../../service-kidney-cancer.html">Kidney Cancer</a></h4>
-<ul>
-<li><a href="../../services/kidney-cancer/about.html">About</a></li>
-<li><a href="../../services/kidney-cancer/pis.html">PIS</a></li>
-<li><a href="../../services/kidney-cancer/faqs.html">FAQs</a></li>
-</ul>
-</div>
-<div class="mega-menu-col">
-<h4><a href="../../service-testicular-cancer.html">Testicular Cancer</a></h4>
-<ul>
-<li><a href="../../services/testicular-cancer/about.html">About</a></li>
-<li><a href="../../services/testicular-cancer/pis.html">PIS</a></li>
-<li><a href="../../services/testicular-cancer/faqs.html">FAQs</a></li>
-</ul>
-</div>
-<div class="mega-menu-col">
-<h4><a href="../../service-penile-cancer.html">Penile Cancer</a></h4>
-<ul>
-<li><a href="../../services/penile-cancer/about.html">About</a></li>
-<li><a href="../../services/penile-cancer/pis.html">PIS</a></li>
-<li><a href="../../services/penile-cancer/faqs.html">FAQs</a></li>
-</ul>
-</div>
-</div>
-</div>
 </li>
 <li><a href="../../gallery.html">Gallery</a></li>
-<li><a href="../../blog.html">Blog</a></li>
+<li><a href="../../blog.html">Blog &#9662;</a>
+<ul class="nav-dropdown">
+<li><a href="../../blog.html#rapn">RAPN</a></li>
+<li><a href="../../blog.html#rarc">RARC</a></li>
+<li><a href="../../blog.html#rarp">RARP</a></li>
+</ul></li>
 <li><a href="../../contactus.html">Contact Us</a></li>
 </ul>
 </nav>
 <div class="header-actions flex items-center gap-1">
 <div class="social-links flex items-center gap-1">
-<a aria-label="X (Twitter)" href="#">
-<svg fill="none" height="20" stroke="var(--text-main)" stroke-width="2" viewbox="0 0 24 24" width="20">
-<path d="M4 4l16 16M4 20L20 4"></path>
-</svg>
+<a href="#" aria-label="X (Twitter)">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="2"><path d="M4 4l16 16M4 20L20 4"></path></svg>
 </a>
 <a aria-label="Instagram" href="https://www.instagram.com/axiom_themes/">
-<svg fill="none" height="20" stroke="var(--text-main)" stroke-width="2" viewbox="0 0 24 24" width="20">
-<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
-<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-</svg>
+<svg fill="none" height="20" stroke="var(--text-main)" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
 </a>
 </div>
 <a class="btn" href="../../contactus.html">Book Consultation</a>
@@ -103,54 +157,14 @@
 </div>
 </header>
 <!-- Main Content -->
-<main><section style="padding-top:140px; padding-bottom:80px;">
+<main>
+<section class="iframe-container">
 <div class="container">
-<h1 style="color:var(--primary-color);font-size:2.8rem;margin-bottom:2rem;">About – Testicular Cancer</h1>
-<div class="article-content">
-<h2 style="color:var(--primary-color);margin-top:40px;padding-top:20px;border-top:2px solid var(--bg-light);">Testicular Cancer</h2>
-<p><strong>Testicular Cancer</strong></p>
-<p>Testicular cancer develops in the testicles (testes), which are located inside the scrotum, the loose bag of skin underneath the penis. The testicles produce male reproductive hormones and sperm for reproduction.</p>
-<p>While relatively rare compared to other types of cancer, testicular cancer is the most common cancer in males between the ages of 15 and 35.</p>
-<p><strong>Key Facts</strong></p>
-<p><strong>Highly Treatable:</strong> Testicular cancer is highly treatable, even when cancer has spread beyond the testicle. Depending on the type and stage of testicular cancer, patients may receive one of several treatments, or a combination.</p>
-<p><strong>Early Detection is Key:</strong> Regular self-exams can help identify growth early, when the chance for successful treatment is highest.</p>
-<p><strong>Symptoms</strong></p>
-<p>Signs and symptoms of testicular cancer include:</p>
-<p>A lump or enlargement in either testicle.</p>
-<p>A feeling of heaviness in the scrotum.</p>
-<p>A dull ache in the abdomen or groin.</p>
-<p>A sudden collection of fluid in the scrotum.</p>
-<p>Pain or discomfort in a testicle or the scrotum.</p>
-<p>Enlargement or tenderness of the breasts.</p>
-<p>Back pain.</p>
-<p><strong>Note:</strong> Cancer usually affects only one testicle.</p>
-<div style="margin:20px 0;text-align:center;"><img alt="Service Image" src="../../images/testicular-cancer/image_1.jpg" style="max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.1);"/></div>
-<p>Shutterstock</p>
-<p>Explore </p>
-<p><strong>Risk Factors</strong></p>
-<p>Factors that may increase the risk of testicular cancer include:</p>
-<p><strong>Undescended testicle (cryptorchidism):</strong> Men who have a testicle that never descended are at greater risk than men whose testicles descended normally.</p>
-<p><strong>Abnormal testicle development:</strong> Conditions that cause testicles to develop abnormally, such as Klinefelter syndrome, may increase risk.</p>
-<p><strong>Family history:</strong> If family members have had testicular cancer, there may be an increased risk.</p>
-<p><strong>Age:</strong> It most often affects teens and younger men, particularly those between ages 15 and 35, though it can occur at any age.</p>
-<p><strong>Race:</strong> Testicular cancer is more common in white men than in black men.</p>
-<p><strong>Diagnosis</strong></p>
-<p><strong>Ultrasound:</strong> Uses sound waves to create an image of the scrotum and testicles to determine the nature of any lumps.</p>
-<p><strong>Blood tests:</strong> Checks for "tumor markers"—substances found in higher than normal amounts when cancer is present.</p>
-<p><strong>Surgery (radical inguinal orchiectomy):</strong> If a suspicious lump is detected, the entire testicle may be removed to determine if it is cancerous.</p>
-<p><strong>Treatment</strong></p>
-<p>Treatment options depend on the type and stage of cancer, as well as overall health and preferences.</p>
-<p><strong>Surgery:</strong> To remove the testicle (orchiectomy) and sometimes nearby lymph nodes.</p>
-<p><strong>Radiation therapy:</strong> Uses high-powered energy beams, such as X-rays, to kill cancer cells.</p>
-<p><strong>Chemotherapy:</strong> Uses drugs to kill cancer cells.</p>
-<p><strong>Prevention</strong></p>
-<p>There is no proven way to prevent testicular cancer. However, doctors recommend regular self-examinations to identify changes early.</p>
-<div style="margin:20px 0;text-align:center;"><img alt="Service Image" src="../../images/testicular-cancer/image_2.jpg" style="max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.1);"/></div>
-<div style="margin:20px 0;text-align:center;"><img alt="Service Image" src="../../images/testicular-cancer/image_3.jpg" style="max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.1);"/></div>
-<p>Testicular cancer is a cancer seen in young men. Early detection makes complete cure a possibility for this disease. Experts such as Dr Gopal Sharma routinely handle such cases in their Uro Oncology Practice. For multimodality and expert treatment of testicular cancer, you can contact Dr Gopal Sharma.</p>
+<h1>About – Testicular Cancer</h1>
+<iframe src="about-content.html" onload="this.style.height = this.contentWindow.document.body.scrollHeight + 40 + 'px';" scrolling="no"></iframe>
 </div>
-</div>
-</section></main>
+</section>
+</main>
 <!-- Footer -->
 <footer class="site-footer section-padding bg-dark text-white">
 <div class="container footer-inner flex justify-between gap-3">
@@ -158,17 +172,12 @@
 <div class="footer-logo">
 <img alt="Dr. Gopal Sharma" height="36" src="../../images/About/Logo-removebg.png" style="filter: brightness(0) invert(1)" width="66"/>
 </div>
-<p class="text-muted text-sm mt-1">
-            Manipal Hospitals, Palam Vihar,<br/>Sector 6, Dwarka,<br/>New
-            Delhi 110075
-          </p>
+<p class="text-muted text-sm mt-1">Manipal Hospitals, Palam Vihar,<br/>Sector 6, Dwarka,<br/>New Delhi 110075</p>
 </div>
 <div class="footer-col flex-col gap-1 w-30">
 <h4 class="footer-title">Contact Us</h4>
 <ul class="footer-links flex-col gap-0-5">
-<li>
-<a href="mailto:drgopalsharma.urologist@gmail.com">drgopalsharma.urologist@gmail.com</a>
-</li>
+<li><a href="mailto:drgopalsharma.urologist@gmail.com">drgopalsharma.urologist@gmail.com</a></li>
 <li><a href="tel:+919315965344">(+91) 9315965344</a></li>
 </ul>
 </div>
@@ -183,11 +192,9 @@
 </div>
 </div>
 <div class="footer-bottom mt-3 pt-2 text-center text-sm text-muted">
-<div class="container">
-<p>© Dr. Gopal Sharma. 2026. All Rights Reserved.</p>
-</div>
+<div class="container"><p>&copy; Dr. Gopal Sharma. 2026. All Rights Reserved.</p></div>
 </div>
 </footer>
-<script defer="" src="../../js/script.js"></script>
+<script defer src="../../js/script.js"></script>
 </body>
 </html>

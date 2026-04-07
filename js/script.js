@@ -4,37 +4,41 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── 0. MEGA MENU HOVER ───────────────────────────────── */
-  document.querySelectorAll('.has-mega-menu').forEach(li => {
-    const menu = li.querySelector('.mega-menu');
-    if (!menu) return;
+  /* ── 0. ALL DROPDOWNS — Desktop hover with delayed hide ── */
+  if (window.innerWidth > 768) {
+    document.querySelectorAll('.nav-list > li').forEach(li => {
+      const dropdown = li.querySelector(':scope > .nav-dropdown, :scope > .services-dropdown');
+      if (!dropdown) return;
 
-    let leaveTimer;
+      let hideTimer;
 
-    li.addEventListener('mouseenter', () => {
-      clearTimeout(leaveTimer);
-      menu.style.opacity = '1';
-      menu.style.visibility = 'visible';
-      menu.style.transform = 'translateY(0)';
+      li.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimer);
+        dropdown.style.opacity = '1';
+        dropdown.style.visibility = 'visible';
+        dropdown.style.transform = 'translateY(0)';
+        dropdown.style.pointerEvents = 'auto';
+      });
+
+      li.addEventListener('mouseleave', () => {
+        hideTimer = setTimeout(() => {
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+          dropdown.style.transform = 'translateY(6px)';
+          dropdown.style.pointerEvents = 'none';
+          // Also hide nested sub-menus (for Services)
+          dropdown.querySelectorAll('.services-submenu').forEach(sm => {
+            sm.style.opacity = '0';
+            sm.style.visibility = 'hidden';
+            sm.style.transform = 'translateX(8px)';
+          });
+        }, 200);
+      });
+
+      // Keep dropdown open when hovering over it
+      dropdown.addEventListener('mouseenter', () => clearTimeout(hideTimer));
     });
-
-    li.addEventListener('mouseleave', () => {
-      leaveTimer = setTimeout(() => {
-        menu.style.opacity = '0';
-        menu.style.visibility = 'hidden';
-        menu.style.transform = 'translateY(-6px)';
-      }, 150);
-    });
-
-    menu.addEventListener('mouseenter', () => clearTimeout(leaveTimer));
-    menu.addEventListener('mouseleave', () => {
-      leaveTimer = setTimeout(() => {
-        menu.style.opacity = '0';
-        menu.style.visibility = 'hidden';
-        menu.style.transform = 'translateY(-6px)';
-      }, 150);
-    });
-  });
+  }
 
   /* ── 1. MOBILE HAMBURGER MENU ─────────────────────────── */
   const toggle = document.querySelector('.mobile-menu-toggle');
@@ -45,37 +49,37 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = nav.classList.toggle('active');
       toggle.innerHTML = isOpen ? '&times;' : '&#9776;';
       toggle.setAttribute('aria-expanded', isOpen);
-      // Prevent body scroll when menu is open
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Handle nested dropdown toggles on mobile
-    const dropdownToggles = nav.querySelectorAll('li > a');
-    dropdownToggles.forEach(link => {
-      link.addEventListener('click', (e) => {
-        // If this link has a dropdown next to it
-        const dropdown = link.nextElementSibling;
-        if (dropdown && dropdown.classList.contains('nav-dropdown') && window.innerWidth <= 768) {
-          e.preventDefault(); // Prevent navigating right away
-          // close others
-          nav.querySelectorAll('.nav-dropdown').forEach(d => {
-            if (d !== dropdown) {
-              d.style.display = 'none';
-            }
-          });
-          // toggle this
-          const isVisible = dropdown.style.display === 'block';
-          dropdown.style.display = isVisible ? 'none' : 'block';
-        } else {
-          // Normal link click, close menu
-          if (window.innerWidth <= 768) {
-            nav.classList.remove('active');
-            toggle.innerHTML = '&#9776;';
-            toggle.setAttribute('aria-expanded', false);
-            document.body.style.overflow = '';
+    nav.addEventListener('click', (e) => {
+      if (window.innerWidth > 768) return;
+
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const parentLi = link.parentElement;
+      const submenu = parentLi.querySelector(':scope > .nav-dropdown, :scope > .services-dropdown, :scope > .services-submenu');
+
+      if (submenu) {
+        e.preventDefault();
+        // Close sibling submenus
+        const siblings = parentLi.parentElement.children;
+        for (const sib of siblings) {
+          if (sib !== parentLi) {
+            const sibSub = sib.querySelector(':scope > .nav-dropdown, :scope > .services-dropdown, :scope > .services-submenu');
+            if (sibSub) sibSub.classList.remove('mobile-open');
           }
         }
-      });
+        submenu.classList.toggle('mobile-open');
+      } else {
+        // Normal link click — close mobile menu
+        nav.classList.remove('active');
+        toggle.innerHTML = '&#9776;';
+        toggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      }
     });
 
     // Close menu on outside click
